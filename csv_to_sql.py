@@ -9,20 +9,22 @@ csv_files = [
     ('sales.csv', 'sales'),
     ('products.csv', 'products'),
     ('delivery.csv', 'delivery'),
-    ('payments.csv', 'payments')  # Added payments.csv for specific handling
+    ('payments.csv', 'payments')
+    ('order_items.csv', 'order_items')
+    ('geolocation.csv', 'geolocation')# Added payments.csv for specific handling
 ]
 
 # Connect to the MySQL database
 conn = mysql.connector.connect(
     host='your_host',
-    user='your_username',
+    user='root',
     password='your_password',
-    database='your_database'
+    database='ecommerce'
 )
 cursor = conn.cursor()
 
 # Folder containing the CSV files
-folder_path = 'path_to_your_folder'
+folder_path = 'C:/Users/HP/OneDrive/Desktop/ECommerce'
 
 def get_sql_type(dtype):
     if pd.api.types.is_integer_dtype(dtype):
